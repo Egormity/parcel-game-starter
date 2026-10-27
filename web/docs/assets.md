@@ -1,5 +1,7 @@
 # Assets and credits
 
+Paths in this guide are relative to the application root (`web/` in the repository).
+
 Parcel's town, buildings, roads, parcel markers, courier, and application icon are drawn from
 original geometric shapes in this repository. No downloaded sprites, soundtracks, model packs,
 remote fonts, or CDN scripts are required at runtime. Original code and artwork use the root MIT

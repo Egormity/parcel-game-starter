@@ -1,5 +1,7 @@
 # Architecture
 
+Paths in this guide are relative to the application root (`web/` in the repository).
+
 Parcel separates a small game's reusable foundation from its delivery example. Phaser owns the browser game loop and collision simulation. React presents controls and snapshots. No React render advances gameplay.
 
 ## Ownership
