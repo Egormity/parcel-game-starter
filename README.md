@@ -47,6 +47,12 @@ from Amazi's production server.
 - [Research and engine choice](docs/research.md): official examples and version-specific references.
 - [Amazi application setup](docs/amazi.md): app registration, runtime tools, ports, and Docker.
 - [Asset credits](docs/assets.md): artwork ownership and dependency licensing.
+- [Amazi skill](skill/agent-content.md): instructions for building and extending 2D browser games.
+
+`skill/catalog.json` contains English, Russian, and Spanish Admin metadata. The matching agent
+instructions are stored in `skill/agent-content.md`; Amazi assigns the custom skill UUID when it
+is created. The skill includes this repository and the architecture, extension, research, and
+runtime references.
 
 The UI is React; Phaser owns the game loop and Arcade Physics. Pure rules and map data stay
 independent of either framework. Phaser 3.90 is deliberately pinned for this Canvas-based example;
