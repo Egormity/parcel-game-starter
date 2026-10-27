@@ -8,17 +8,17 @@ animation or a static mockup does not establish gameplay.
 
 [Parcel game starter](https://github.com/Egormity/parcel-game-starter) provides two playable delivery
 maps, collision, keyboard/touch movement, objectives, pause/resume, restart, local best times, and
-a separate web interface. The repository may require access. If it cannot be fetched, use the
-guidance below and available project files; do not claim to have inspected inaccessible source.
+a separate web interface. The public template's default branch is `main`. If it cannot be fetched,
+use the guidance below and available project files; do not claim to have inspected inaccessible source.
 No public production preview has been supplied. An authenticated editor link or localhost address
 is not a public game preview.
 
 Read the reference selectively:
 
-- [Architecture](https://github.com/Egormity/parcel-game-starter/blob/feature/codex/parcel-game-starter/2026-10-27/docs/architecture.md) for ownership and lifecycle.
-- [Extension guide](https://github.com/Egormity/parcel-game-starter/blob/feature/codex/parcel-game-starter/2026-10-27/docs/extending.md) for new maps, mechanics, or art.
-- [Research](https://github.com/Egormity/parcel-game-starter/blob/feature/codex/parcel-game-starter/2026-10-27/docs/research.md) for engine choices and primary sources.
-- [Amazi integration](https://github.com/Egormity/parcel-game-starter/blob/feature/codex/parcel-game-starter/2026-10-27/docs/amazi.md) when importing or deploying.
+- [Architecture](https://github.com/Egormity/parcel-game-starter/blob/main/docs/architecture.md) for ownership and lifecycle.
+- [Extension guide](https://github.com/Egormity/parcel-game-starter/blob/main/docs/extending.md) for new maps, mechanics, or art.
+- [Research](https://github.com/Egormity/parcel-game-starter/blob/main/docs/research.md) for engine choices and primary sources.
+- [Amazi integration](https://github.com/Egormity/parcel-game-starter/blob/main/docs/amazi.md) when importing or deploying.
 
 Parcel's tested foundation is TypeScript, Vite, React for menus/HUD, and Phaser 3.90.0 with Arcade
 Physics and Canvas rendering. The Phaser pin is a deliberate example choice, not the latest release

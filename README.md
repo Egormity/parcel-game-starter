@@ -59,9 +59,9 @@ The UI is React; Phaser owns the game loop and Arcade Physics. Pure rules and ma
 independent of either framework. Phaser 3.90 is deliberately pinned for this Canvas-based example;
 see the research notes before changing engine versions or renderer.
 
-This repository starts on `feature/codex/parcel-game-starter/2026-10-27`, with no `main` branch,
-for Amazi's initial GitHub connection. Repository synchronization and application registration are
-separate steps. A public game preview can be added after deployment.
+This public template uses `main` as its default branch. Import its source into an Amazi application;
+repository synchronization and application registration are separate steps. See the setup guide
+for connecting your own output repository. A public game preview can be added after deployment.
 
 ## License
 
