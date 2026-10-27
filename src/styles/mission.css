@@ -1,0 +1,256 @@
+.mission-column {
+  min-width: 0;
+}
+
+.mission-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 23px 22px 18px;
+}
+
+.card-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #7f8c78;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.card-eyebrow > svg {
+  margin-left: auto;
+  color: #aab39e;
+}
+
+.mission-card h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 24px;
+  letter-spacing: -0.8px;
+  line-height: 1.35;
+  font-weight: 800;
+  margin-top: 22px;
+}
+
+.mission-copy {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #84897c;
+  margin-top: 13px;
+}
+
+.delivery-total {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.delivery-total > strong {
+  font-family: 'Manrope', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1.3px;
+}
+
+.delivery-total > strong > span {
+  color: #b2b8a9;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.delivery-total > span {
+  font-size: 10px;
+  color: #939787;
+}
+
+.delivery-progress {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.delivery-progress > span {
+  display: grid;
+  place-items: center;
+  height: 42px;
+  flex: 1;
+  border: 1px dashed #d8ddce;
+  border-radius: 7px;
+  color: #b5bfa9;
+  background: #f5f6ee;
+}
+
+.delivery-progress > .is-delivered {
+  color: #fff;
+  background: #719579;
+  border: 1px solid #719579;
+}
+
+.current-job {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 24px;
+  border-top: 1px solid #e7e7da;
+  padding-top: 20px;
+}
+
+.job-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: #faf0dd;
+  color: #b18c50;
+  flex-shrink: 0;
+}
+
+.current-job small {
+  display: block;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #a6a18d;
+}
+
+.current-job strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.mission-hint {
+  margin-top: 13px;
+  color: #828b7d;
+  font-size: 11px;
+  line-height: 1.7;
+  min-height: 38px;
+}
+
+.best-time {
+  border-top: 1px solid #e7e7da;
+  margin-top: 17px;
+  padding-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  color: #909782;
+}
+
+.best-time strong {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  color: #71816e;
+}
+
+.field-notes {
+  padding: 26px 10px 0;
+}
+
+.note-heading {
+  display: flex;
+  justify-content: space-between;
+  color: #667862;
+}
+
+.note-heading h3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  letter-spacing: -0.2px;
+}
+
+.field-notes ol {
+  padding: 0;
+  margin: 18px 0 0;
+  list-style: none;
+}
+
+.field-notes li {
+  display: flex;
+  align-items: baseline;
+  gap: 11px;
+  margin-top: 15px;
+}
+
+.field-notes li > span {
+  font-size: 9px;
+  color: #a4ac97;
+  font-weight: 700;
+}
+
+.field-notes li > p {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #8a917f;
+}
+
+.field-notes strong {
+  display: inline;
+  color: #6e7c66;
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .mission-card {
+    padding: 20px 18px 17px;
+  }
+  .mission-card h2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 900px) {
+  .mission-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 4px;
+  }
+  .mission-card h2 {
+    margin-top: 15px;
+  }
+  .mission-copy {
+    margin-top: 10px;
+  }
+  .field-notes {
+    padding: 23px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mission-column {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 9px;
+  }
+  .mission-card {
+    padding: 22px;
+  }
+  .mission-card h2 {
+    font-size: 25px;
+  }
+  .mission-card h2 br {
+    display: none;
+  }
+  .mission-copy {
+    font-size: 13px;
+  }
+  .delivery-total {
+    margin-top: 18px;
+  }
+  .mission-hint {
+    min-height: 0;
+    font-size: 12px;
+  }
+  .field-notes {
+    padding: 25px 9px 3px;
+  }
+  .field-notes li > p {
+    font-size: 12px;
+  }
+}

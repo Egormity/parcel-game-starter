@@ -1,0 +1,10 @@
+{
+  "userTitleEn": "Browser 2D games",
+  "userTitleRu": "Браузерные 2D-игры",
+  "userTitleEs": "Juegos 2D para navegador",
+  "userDescriptionEn": "Build browser 2D games with a reusable development flow: rules, levels, engine and UI. Covers collisions, gravity, rigid bodies, particles, effects, controls, performance and lifecycle, with the playable Parcel starter.",
+  "userDescriptionRu": "Создавайте браузерные 2D-игры на расширяемой основе: правила, уровни, движок и интерфейс. Столкновения, гравитация, твёрдые тела, частицы, эффекты, управление, производительность и жизненный цикл с примером Parcel.",
+  "userDescriptionEs": "Crea juegos 2D para navegador con una base reutilizable: reglas, niveles, motor e interfaz. Incluye colisiones, gravedad, cuerpos rígidos, partículas, efectos, controles, rendimiento y ciclo de vida, con el ejemplo Parcel.",
+  "icon": "gamepad-2",
+  "agentDescription": "Use for building or extending playable browser 2D games with player input, rules, collision or spatial interaction, objectives, and outcomes. Prioritize a reusable structure separating game rules, level data, engine lifecycle, rendering, and UI. Includes the Parcel TypeScript/Phaser/React example and guidance for loop ownership, controls, assets, mobile support, Amazi integration, and verification. Preserve the user's genre and an existing suitable engine; decorative canvas animation alone is not this skill's purpose. Covers advanced collision filtering, sensors, gravity, rigid bodies, constraints, fast-motion detection, particles and effects, with explicit capability choices, lifecycle ownership and a staged playable development flow."
+}
