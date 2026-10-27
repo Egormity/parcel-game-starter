@@ -21,8 +21,7 @@ export function MissionPanel({ snapshot }: Props) {
           <span className="status-dot" /> YOUR DAY'S WORK <Package size={18} aria-hidden="true" />
         </div>
         <h2 id="mission-title">
-          A little parcel.
-          <br />A happy neighbour.
+          A little parcel. <br />A happy neighbour.
         </h2>
         <p className="mission-copy">
           Pick up at the post office. Follow the matching marker. Deliver a little joy.
