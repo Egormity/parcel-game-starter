@@ -49,3 +49,9 @@ Reduced motion affects presentation. It should not remove required markers or ch
 ## Finish a change
 
 Run focused rules tests and `pnpm run build`. Use `pnpm run test:browser` for changes to gameplay integration, controls, layout, or lifecycle. Follow the repository's testing workflow when adapting this into another project. Complete a route through real controls, test pause/resume and restart, and verify that switching maps removes the previous map's bodies and listeners. Inspect the production build and preserve the [Amazi runtime contract](amazi.md).
+
+## Advanced systems
+
+Use [Advanced mechanics and effects](advanced-systems.md) for gravity, collision filtering,
+constraints, fast motion, particles, renderer capabilities and a staged development workflow.
+The reference is a playable starting point; those extension paths are not all implemented features.

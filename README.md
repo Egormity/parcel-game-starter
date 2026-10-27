@@ -44,6 +44,7 @@ from Amazi's production server.
 
 - [Architecture](docs/architecture.md): who owns state, timing, input, rendering, and cleanup.
 - [Extending the example](docs/extending.md): add maps, mechanics, assets, or a different genre.
+- [Advanced systems](docs/advanced-systems.md): gravity, rigid bodies, constraints, particles and effects.
 - [Research and engine choice](docs/research.md): official examples and version-specific references.
 - [Amazi application setup](docs/amazi.md): app registration, runtime tools, ports, and Docker.
 - [Asset credits](docs/assets.md): artwork ownership and dependency licensing.
