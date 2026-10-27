@@ -10,8 +10,7 @@ animation or a static mockup does not establish gameplay.
 maps, collision, keyboard/touch movement, objectives, pause/resume, restart, local best times, and
 a separate web interface. The public template's default branch is `main`. If it cannot be fetched,
 use the guidance below and available project files; do not claim to have inspected inaccessible source.
-No public production preview has been supplied. An authenticated editor link or localhost address
-is not a public game preview.
+Production preview: [Parcel — browser 2D game](https://5c9583ce-6edd-4c8f-b3a6-f30cac353a64--d8dbf133.projects.amazi.pro/).
 
 Inspect the current repository documentation for architecture, extension examples, research and
 Amazi integration; use its own navigation rather than assuming fixed documentation filenames.
