@@ -13,12 +13,8 @@ use the guidance below and available project files; do not claim to have inspect
 No public production preview has been supplied. An authenticated editor link or localhost address
 is not a public game preview.
 
-Read the reference selectively:
-
-- [Architecture](https://github.com/Egormity/parcel-game-starter/blob/main/docs/architecture.md) for ownership and lifecycle.
-- [Extension guide](https://github.com/Egormity/parcel-game-starter/blob/main/docs/extending.md) for new maps, mechanics, or art.
-- [Research](https://github.com/Egormity/parcel-game-starter/blob/main/docs/research.md) for engine choices and primary sources.
-- [Amazi integration](https://github.com/Egormity/parcel-game-starter/blob/main/docs/amazi.md) when importing or deploying.
+Inspect the current repository documentation for architecture, extension examples, research and
+Amazi integration; use its own navigation rather than assuming fixed documentation filenames.
 
 Parcel's tested foundation is TypeScript, Vite, React for menus/HUD, and Phaser 3.90.0 with Arcade
 Physics and Canvas rendering. The Phaser pin is a deliberate example choice, not the latest release
@@ -26,6 +22,8 @@ or a universal recommendation. Phaser 4 retains but deprecates Canvas and offers
 features. Keep an existing suitable engine; do not migrate a working project to match Parcel.
 PixiJS fits custom rendering with separately owned gameplay services; direct Canvas can fit a small
 game. Match the engine and physics to the requested mechanics.
+
+Inspect the repository’s current README, application folders and documentation before adapting it. Identify the standalone application boundary from its actual build and runtime files; do not assume an example’s paths or filenames remain unchanged. Repository-level skill metadata is not an application dependency.
 
 ## Build the reusable base
 
@@ -41,7 +39,7 @@ Separate these responsibilities at the scale the project needs:
 - A narrow typed controller/snapshot boundary connects the game to menus and HUD.
 - Web UI owns loading/errors, accessible controls, settings, and attachment/disposal.
 
-Parcel puts these in `src/game`, `src/engine`, and `src/ui`. Extend a focused module or data schema
+Locate the example’s rules, engine and interface owners. Extend a focused module or data schema
 before introducing a general framework or ECS. Rendering must not silently decide victory. Level
 data alone does not replace genre-specific art, interaction rules, or interface copy; change those
 deliberately when adapting the example.
@@ -119,7 +117,7 @@ them, and preserve the existing engine when its capabilities are sufficient:
 For implemented mechanics, verify contact filters, gravity/grounding, fast motion, trigger
 deduplication, pooled-object reset, bounded effects, pause and repeated scene replacement. Render
 animation and sound consume outcomes but never award score or apply damage. See the reference's
-`docs/advanced-systems.md` for practical extension seams and capability limits.
+current advanced-systems documentation for practical extension seams and capability limits.
 
 ## Browser lifetime and controls
 
@@ -147,11 +145,16 @@ render cost as scenes grow; avoid per-frame object allocation, DOM updates, or r
 
 ## Amazi and verification
 
-Keep package files, lockfile, Vite config, source, assets, and Dockerfile together at the allocated
-application root. A single root application can use source path `.`. When importing into an existing
-project, preserve its registered source path and runtime configuration; GitHub synchronization does
-not register an application. Honor `PORT`, `0.0.0.0`, Node 22 compatibility, the pinned package manager,
-and the Docker contract. Do not invent an app manifest or require an `apps/web` directory.
+Keep each application in a standalone folder inside the project repository, with its own package
+files, lockfile, configuration, source, assets, tests and Dockerfile. Inspect the reference's current
+structure to find that folder. For supplied source, create an empty application and copy only the
+application folder's contents into the returned source path. Preserve that allocated path; never
+copy the whole example repository or nest another application folder inside it. If a specific folder
+name is required, configure the empty application before copying source, and only when the target
+path is absent. Use the application build context when every Docker input is application-local.
+Commands run inside the registered source path. Honor injected `PORT`, `0.0.0.0`, Node 22
+compatibility, the pinned package manager and the Docker contract. GitHub synchronization does not
+register applications; do not invent a repository app manifest.
 Load Amazi's current application-configuration guidance before import; supplied source uses
 `empty_application`. Keep editable source, not generated `dist`, in the allocated root. Registration,
 preview/publication flags and adapters live in the application catalog. See

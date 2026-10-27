@@ -1,5 +1,7 @@
 # Extend Parcel
 
+Paths in this guide are relative to the application root (`web/` in the repository).
+
 Start with [architecture](architecture.md). The reference is a complete small delivery game with explicit seams for changes. It is not an empty engine framework or a requirement to keep the courier theme.
 
 ## Add a route

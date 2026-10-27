@@ -1,5 +1,7 @@
 # Engine research
 
+Paths in this guide are relative to the application root (`web/` in the repository).
+
 Research checked on 27 October 2026. Parcel is a reusable example with a deliberately small scope: top-down movement, solid obstacles, pickup/delivery rules, two maps, and a React interface. These choices are implementation decisions, not requirements for every 2D game.
 
 ## Choosing the foundation

@@ -1,5 +1,7 @@
 # Advanced mechanics and effects
 
+Paths in this guide are relative to the application root (`web/` in the repository).
+
 Parcel is a top-down, zero-gravity delivery example with Arcade collisions. It is not already a
 platformer, rigid-body puzzle, particle engine or multiplayer game. This guide shows where to add
 those requested behaviors while preserving the ownership in [architecture](architecture.md).
