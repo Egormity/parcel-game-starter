@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowUpRight, Package, Sprout } from 'lucide-react';
+import { Package, Sprout } from 'lucide-react';
 import { LEVELS } from '../game/levels';
 import { GamePanel } from './GamePanel';
 import { MissionPanel } from './MissionPanel';
@@ -18,45 +18,17 @@ export function App() {
       <header className="site-header">
         <a className="brand" href="/" aria-label="Parcel home">
           <span className="brand-icon">
-            <Package size={24} strokeWidth={1.8} />
+            <Package size={22} strokeWidth={1.8} />
           </span>
-          <span>
+          <span className="brand-name">
             parcel<span className="brand-period">.</span>
           </span>
-          <small>POCKET POST</small>
         </a>
-        <div className="header-note">
-          <span className="status-dot" /> A LITTLE EVERYDAY ADVENTURE
-        </div>
-        <span className="edition-badge">
-          2D GAME <ArrowUpRight size={14} aria-hidden="true" />
-        </span>
+        <p className="header-note">A tiny delivery game for a slow afternoon.</p>
       </header>
-      <main>
-        <section className="intro" aria-labelledby="page-title">
-          <div>
-            <p className="eyebrow">
-              <span /> GOOD THINGS COME IN SMALL PARCELS
-            </p>
-            <h1 id="page-title">
-              Small town. <span>Big deliveries.</span>
-            </h1>
-            <p className="intro-copy">
-              A pocket-sized adventure. A whole neighbourhood to brighten.
-            </p>
-          </div>
-          <div className="intro-stamp" aria-hidden="true">
-            <Sprout size={25} strokeWidth={1.4} />
-            <span>
-              TAKE THE
-              <br />
-              SCENIC ROUTE
-            </span>
-            <small>NO RUSH, JUST JOY</small>
-          </div>
-        </section>
+
+      <main className="app-main">
         <div className="play-layout">
-          <MissionPanel snapshot={game.snapshot} />
           <div className="play-column">
             <GamePanel
               {...game}
@@ -66,6 +38,9 @@ export function App() {
               disabled={game.status !== 'ready' || game.snapshot?.phase !== 'playing'}
               setDirection={game.setDirection}
             />
+          </div>
+          <div className="side-panel">
+            <MissionPanel snapshot={game.snapshot} />
             <RoutePicker
               selected={selected}
               disabled={game.status !== 'ready'}
@@ -74,26 +49,41 @@ export function App() {
           </div>
         </div>
       </main>
+
       <footer className="site-footer">
-        <p>
-          <span className="footer-flower" aria-hidden="true">
-            ✳
-          </span>{' '}
-          A little care goes a long way.
-        </p>
-        <label className="motion-toggle">
-          <input
-            type="checkbox"
-            checked={reducedMotion}
-            onChange={(event) => {
-              setReducedMotion(event.target.checked);
-              saveReducedMotion(event.target.checked);
-            }}
-          />
-          <span className="toggle-track" aria-hidden="true" />
-          <span>Reduced motion</span>
-        </label>
-        <span className="footer-caption">MADE FOR A GOOD LITTLE BREAK.</span>
+        <section className="footer-hero" aria-labelledby="page-title">
+          <div>
+            <h1 id="page-title">
+              Small town. <span>Big deliveries.</span>
+            </h1>
+            <p className="intro-copy">
+              A pocket-sized adventure. A whole neighbourhood to brighten.
+            </p>
+          </div>
+          <div className="intro-stamp" aria-hidden="true">
+            <Sprout size={26} strokeWidth={1.4} />
+            <span>
+              TAKE THE
+              <br />
+              SCENIC ROUTE
+            </span>
+          </div>
+        </section>
+        <div className="footer-bar">
+          <p>A little care goes a long way.</p>
+          <label className="motion-toggle">
+            <input
+              type="checkbox"
+              checked={reducedMotion}
+              onChange={(event) => {
+                setReducedMotion(event.target.checked);
+                saveReducedMotion(event.target.checked);
+              }}
+            />
+            <span className="toggle-track" aria-hidden="true" />
+            <span>Reduced motion</span>
+          </label>
+        </div>
       </footer>
     </div>
   );

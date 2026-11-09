@@ -15,132 +15,149 @@
 
 :root {
   font-family: 'DM Sans', sans-serif;
-  color: #263b34;
-  background: #f5f2e9;
+  font-size: 16px;
+  color: #23382f;
+  background-color: #f4f1e6;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  --ink: #263b34;
-  --muted: #778078;
-  --paper: #fffdf7;
-  --border: #dfdfd2;
-  --orange: #df704b;
-  --green: #3b6650;
+  --ink: #23382f;
+  --ink-soft: #4d6357;
+  --muted: #64766a;
+  --paper: #fffdf6;
+  --canvas: #f4f1e6;
+  --border: #e4e3d3;
+  --border-strong: #cfd6c3;
+  --orange: #e0704a;
+  --orange-strong: #c95b37;
+  --green: #2f5d47;
+  --green-soft: #eef1e2;
+  --green-deep: #1e3a2e;
+  --shadow-card: 0 26px 50px -36px rgba(30, 58, 46, 0.45);
 }
 
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   min-width: 320px;
+  background:
+    radial-gradient(1100px 520px at 12% -10%, #fdfaf0 0%, rgba(253, 250, 240, 0) 62%), var(--canvas);
+  background-attachment: fixed;
 }
+
 button,
 input {
   font: inherit;
 }
+
 button,
 a {
   -webkit-tap-highlight-color: transparent;
 }
+
 button {
   color: inherit;
   cursor: pointer;
+  transition:
+    background-color 0.16s ease,
+    border-color 0.16s ease,
+    box-shadow 0.16s ease,
+    transform 0.16s ease;
 }
+
 button:disabled {
   cursor: default;
   opacity: 0.45;
 }
+
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+button svg {
+  flex-shrink: 0;
+}
+
+button,
+.motion-toggle {
+  touch-action: manipulation;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
-button,
-input,
-a,
-[tabindex] {
-  outline-offset: 5px;
-}
-:focus-visible {
-  outline: 3px solid #df704b;
-}
-button {
-  transition:
-    background-color 0.16s ease,
-    border-color 0.16s ease,
-    transform 0.16s ease;
-}
-button:active:not(:disabled) {
-  transform: translateY(1px);
-}
-button svg {
-  flex-shrink: 0;
-}
+
 h1,
 h2,
 h3,
 p {
   margin: 0;
 }
+
 button,
-.motion-toggle {
-  touch-action: manipulation;
+input,
+a,
+[tabindex] {
+  outline-offset: 4px;
 }
+
+:focus-visible {
+  outline: 3px solid var(--orange);
+}
+
 ::selection {
   background: #efb797;
-  color: #263b34;
+  color: var(--ink);
 }
 
 .app-shell {
-  width: min(1380px, calc(100% - 96px));
+  width: min(1280px, calc(100% - 64px));
   margin: 0 auto;
+  padding-bottom: 48px;
 }
-.eyebrow,
-.card-eyebrow,
-.header-note,
-.edition-badge,
-.footer-caption {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.25px;
-}
-.status-dot {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: #648969;
-}
+
 .button-primary {
-  border: 0;
-  background: var(--orange);
-  color: #fffdf7;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
-  padding: 14px 20px;
-  border-radius: 10px;
-  font-size: 13px;
+  gap: 10px;
+  padding: 15px 22px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--orange-strong);
+  color: #fffdf6;
+  font-size: 15px;
   font-weight: 700;
   white-space: nowrap;
+  box-shadow: 0 14px 24px -16px rgba(201, 91, 55, 0.95);
 }
+
 .button-primary:hover:not(:disabled) {
-  background: #c75e3b;
+  background: #b34d2c;
 }
+
+.button-primary:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
 .icon-button {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: transparent;
   display: grid;
   place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink-soft);
 }
+
 .icon-button:hover:not(:disabled) {
-  background: #e9ecdf;
-  border-color: #b2b9a6;
+  border-color: var(--border-strong);
+  background: var(--green-soft);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -153,16 +170,6 @@ button,
     scroll-behavior: auto !important;
   }
 }
-@media (max-width: 1100px) {
-  .app-shell {
-    width: calc(100% - 48px);
-  }
-}
-@media (max-width: 600px) {
-  .app-shell {
-    width: calc(100% - 32px);
-  }
-}
 
 [data-reduced-motion='true'] *,
 [data-reduced-motion='true'] *::before,
@@ -170,4 +177,11 @@ button,
   animation-duration: 0.01ms !important;
   animation-iteration-count: 1 !important;
   transition-duration: 0.01ms !important;
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    width: calc(100% - 32px);
+    padding-bottom: 32px;
+  }
 }

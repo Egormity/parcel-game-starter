@@ -30,15 +30,13 @@ export function GamePanel({
 }: Props) {
   const phase = snapshot?.phase ?? 'ready';
   const playing = phase === 'playing';
+
   return (
     <section className="game-card" aria-label="Delivery game">
       <div className="game-toolbar">
         <div className="map-name">
           <MapPin size={18} aria-hidden="true" />
-          <div>
-            <small>YOUR NEIGHBOURHOOD</small>
-            <strong>{snapshot?.levelName ?? 'Unfolding the map…'}</strong>
-          </div>
+          <strong>{snapshot?.levelName ?? 'Unfolding the map…'}</strong>
         </div>
         <div className="game-actions">
           <div
@@ -69,6 +67,7 @@ export function GamePanel({
           </button>
         </div>
       </div>
+
       <div
         className="game-stage"
         data-phase={phase}
@@ -146,19 +145,11 @@ export function GamePanel({
           </div>
         )}
       </div>
+
       <div className="map-caption">
-        <span>
-          <span className="map-live-dot" />
-          {playing
-            ? 'Out for delivery'
-            : phase === 'won'
-              ? 'Route complete'
-              : phase === 'paused'
-                ? 'Taking a break'
-                : 'A fresh route awaits'}
-        </span>
         <p id="game-controls-description">
-          <Keyboard size={15} aria-hidden="true" /> WASD / arrows to move <i>·</i> Esc to pause
+          <Keyboard size={15} aria-hidden="true" />
+          WASD or arrow keys to move<span aria-hidden="true"> · </span>Esc to pause
         </p>
       </div>
     </section>

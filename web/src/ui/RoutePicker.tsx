@@ -1,4 +1,4 @@
-import { ArrowUpRight, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { LEVELS } from '../game/levels';
 
 interface Props {
@@ -11,8 +11,8 @@ export function RoutePicker({ selected, disabled, onSelect }: Props) {
   return (
     <section className="route-picker" aria-labelledby="routes-title">
       <div className="routes-heading">
-        <h2 id="routes-title">Pick your patch.</h2>
-        <span>{LEVELS.length} little adventures</span>
+        <h2 id="routes-title">Choose a route</h2>
+        <p>{LEVELS.length} short rounds, no time limit.</p>
       </div>
       <div className="route-options">
         {LEVELS.map((level, index) => (
@@ -20,7 +20,6 @@ export function RoutePicker({ selected, disabled, onSelect }: Props) {
             key={level.id}
             type="button"
             className={`route-option ${selected === index ? 'selected' : ''}`}
-            aria-label={level.name}
             aria-pressed={selected === index}
             disabled={disabled}
             onClick={() => onSelect(index)}
@@ -29,12 +28,11 @@ export function RoutePicker({ selected, disabled, onSelect }: Props) {
               <MiniMap mirrored={index === 1} />
             </span>
             <span className="route-option-copy">
-              <small>ROUTE 0{index + 1}</small>
               <strong>{level.name}</strong>
               <span>{level.subtitle}</span>
             </span>
-            <span className="route-selection-icon">
-              {selected === index ? <Check size={18} /> : <ArrowUpRight size={18} />}
+            <span className="route-check" aria-hidden="true">
+              {selected === index && <Check size={16} strokeWidth={2.6} />}
             </span>
           </button>
         ))}

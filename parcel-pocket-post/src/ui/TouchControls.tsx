@@ -40,9 +40,6 @@ export function TouchControls({ disabled, setDirection }: Props) {
 
   return (
     <div className="touch-controls" aria-label="Touch movement controls">
-      <p>
-        Thumbs at the ready.<span>Hold an arrow to move.</span>
-      </p>
       <div className="direction-pad">
         {controls.map(({ direction, Icon }) => (
           <button
